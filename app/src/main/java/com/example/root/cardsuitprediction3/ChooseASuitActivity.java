@@ -2,6 +2,7 @@ package com.example.root.cardsuitprediction3;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class ChooseASuitActivity extends AppCompatActivity {
+public class ChooseASuitActivity extends AppCompatActivity implements SensorEventListener {
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
@@ -22,19 +23,20 @@ public class ChooseASuitActivity extends AppCompatActivity {
 
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-        suitView = (TextView)findViewById(R.id.suittextview);
+        suitView = (TextView) findViewById(R.id.suittextview);
         suitView.setVisibility(View.INVISIBLE);
 
-        Button resetButton = (Button)findViewById(R.id.resetbutton);
+        Button resetButton = (Button) findViewById(R.id.resetbutton);
 
         resetButton.setOnClickListener(
                 new Button.OnClickListener() {
-                    public void onClick (View v) {
+                    public void onClick(View v) {
                         suitView.setText("YOU WILL CHOOSE CLUBS");
                         suitView.setVisibility(View.INVISIBLE);
                     }
                 }
         );
+    }
 
     protected void onResume() {
         super.onResume();
@@ -56,5 +58,5 @@ public class ChooseASuitActivity extends AppCompatActivity {
         }
     }
 
-    }
 }
+
