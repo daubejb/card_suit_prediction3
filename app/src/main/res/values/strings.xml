@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Card Suit Prediction 3</string>
+    <string name="suitTextViewText">YOU WILL CHOOSE CLUBS</string>
+    <string name="resetButtonText">Reset</string>
+</resources>
