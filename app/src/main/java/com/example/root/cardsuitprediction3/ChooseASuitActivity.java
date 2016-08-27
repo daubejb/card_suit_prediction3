@@ -8,12 +8,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class ChooseASuitActivity extends AppCompatActivity implements SensorEventListener {
 
+    // JEFF YOU ARE ABOUT TO http://stackandroid.com/tutorial/android-speech-to-text-tutorial/
+    private final int SPEECH_RECOGNITION_CODE = 1;
     private SensorManager mSensorManager;
     private Sensor mSensor;
+    private ImageButton buttonVoice;
     TextView suitView;
 
     @Override
@@ -34,6 +38,12 @@ public class ChooseASuitActivity extends AppCompatActivity implements SensorEven
                         suitView.setText("YOU WILL CHOOSE CLUBS");
                         suitView.setVisibility(View.INVISIBLE);
                     }
+                }
+        );
+
+        suitView.setOnClickListener(
+                {
+
                 }
         );
     }
